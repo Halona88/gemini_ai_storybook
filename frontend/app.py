@@ -4,14 +4,7 @@ import base64
 
 st.title("🎨 Gemini 이미지 생성기")
 
-prompt = st.text_input("프롬프트를 입력하세요:", 
-    "generate a 3D image of a happy elderly Korean woman with a round face, a pair of glasses and short black wave hair, "
-    "wearing a light pastel-colored clothes, sitting outdoors on a low wooden stool. She will be focused on a piece of white watercolor paper "
-    "placed on a small easel in front of her, carefully painting delicate pink and red roses with a fine brush. Several small pots of watercolor paints "
-    "in various shades of pink, red, and green will be on a nearby weathered wooden table, along with a jar of clear water. The background will show a "
-    "slightly blurred garden with lush green foliage and hints of soft sunlight filtering through, suggesting a cool summer breeze. Her face will show "
-    "wrinkles of age and a wide, joyful smile, conveying happy laughter."
-)
+prompt = st.text_input("프롬프트를 입력하세요:", )
 
 if st.button("이미지 생성"):
     with st.spinner("🖌️ Gemini가 이미지를 그리고 있어요..."):
@@ -23,7 +16,7 @@ if st.button("이미지 생성"):
             
             # 디버깅용 응답 로그 출력
             st.write("🔎 응답 상태 코드:", response.status_code)
-            st.write("📦 응답 내용:", response.text)
+            # st.write("📦 응답 내용:", response.text)
 
             if response.status_code == 200:
                 data = response.json()
