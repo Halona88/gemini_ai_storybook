@@ -8,7 +8,9 @@ prompt = st.text_input("프롬프트를 입력하세요:", "generate a 3D image 
 
 if st.button("이미지 생성"):
     with st.spinner("이미지 생성 중..."):
-        response = requests.post("http://localhost:8000/generate", json={"prompt": prompt})
+        # response = requests.post("http://localhost:8000/generate", json={"prompt": prompt})
+        API_URL = "https://my-fastapi-service.onrender.com/generate"
+        response = requests.post(API_URL, json={"prompt": prompt})
         if response.status_code == 200:
             data = response.json()
             if "image_base64" in data:
