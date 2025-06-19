@@ -21,6 +21,10 @@ client = genai.Client(api_key=api_key)
 class PromptRequest(BaseModel):
     prompt: str
 
+@app.get("/")
+def root():
+    return{"message": "서버가 정상 작동 중입니다"}
+
 @app.post("/generate")
 async def generate_image(req: PromptRequest):
     response = client.models.generate_content(
