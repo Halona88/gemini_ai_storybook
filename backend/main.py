@@ -9,9 +9,9 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["/"],
-    allow_methods=["/"],
-    allow_headers=["/"],
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Gemini API key 입력
@@ -22,6 +22,7 @@ class PromptRequest(BaseModel):
     prompt: str
 
 @app.get("/")
+@app.head("/")
 def root():
     return{"message": "서버가 정상 작동 중입니다"}
 
