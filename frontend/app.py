@@ -17,7 +17,8 @@ if st.button("이미지 생성"):
     with st.spinner("🖌️ Gemini가 이미지를 그리고 있어요..."):
         try:
             # 실제 FastAPI 서비스 주소로 변경하세요
-            API_URL = "https://your-fastapi-service.onrender.com/generate"
+            
+            API_URL = "https://gemini-ai-storybook.onrender.com/generate"
             response = requests.post(API_URL, json={"prompt": prompt})
             
             # 디버깅용 응답 로그 출력
