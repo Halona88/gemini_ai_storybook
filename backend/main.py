@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 # Gemini API key 입력
-api_key = "AIzaSyDHVpmobppxKAbBH8wpwsUrSSYrymJ0XC4"
+api_key = "YOUR_API_KEY"
 client = genai.Client(api_key=api_key)
 
 class PromptRequest(BaseModel):
